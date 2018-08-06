@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/mui.picker.all.css" />
+  <link rel="stylesheet" href="css/mui.min.css" />
+  <title>跨店零售</title>
+</head>
+<style>
+		.drop-down{
+			width:96%;height:50px;
+			margin: 1% auto;background:#f4f5f8;
+			color: rgb(57,63,77);
+		}
+		.drop-down label{
+			font-size:0.4rem;
+			line-height:50px;
+			padding-left:6%;
+		}
+		.drop-down span{
+			font-size: 0.4rem;
+			line-height:50px;
+			padding-left:12%;
+		}
+		.drop-down a{
+			float: right;
+			margin-right:16%;
+		}
+		.shop_switch{
+			width:100%;height: 50px;
+			margin:1% 0;
+		}
+		#mySwitch{
+			float:right;
+			margin:10px 0;
+			margin-right:2%;
+			color: rgb(57,63,77);
+		}
+		.shop_switch label{
+			line-height:50px;
+			font-size:0.3rem;
+			padding-left:40%;
+		}
+		.list_data_sum{
+			width:96%;height:88px;margin: 0 auto
+		}
+		.list_data_l{
+			width:40%;height:80px;background:#ff9f7f;float: left;text-align: center;position: relative;
+		}
+		.list_data_m{
+			width:20%;height:80px;float: left;text-align: center;
+		}
+		.list_data_r{
+			width:40%;height:80px;background:#52d5d8;float: left;text-align: center;position: relative;
+		}
+		.list_data_l p{
+			color:#FFFFFF;font-size:0.5rem;padding-top: 16%;
+		}
+		.list_data_m p{
+			padding-top:28px;color:rgb(118,128,151);font-size:0.4rem;
+		}
+		.list_data_r p{
+		color:#FFFFFF;font-size:0.5rem;padding-top:16%;
+		}
+		.top_Arrow-l{
+			position: absolute;bottom: 10%;left:4%;color: #929292;
+		}
+		.dow_Arrow-l{
+		position: absolute;bottom:-2%;left:4%;color: #929292;
+		}
+		.top_Arrow-r{
+			position: absolute;bottom: 10%;right:4%;color: #929292;
+		}
+		.dow_Arrow-r{
+		position: absolute;bottom:-2%;right:4%;color:#393F4D;
+		}
+		#zb{
+		padding-top:10px;color: #FFFFFF;
+		}
+	  #jin{
+		padding-top:10px;color: #FFFFFF;
+		}
+		#Big_box{
+			width: 96%;height: 100%;margin: 0 auto;
+		}
+		#L{
+			width:40%;float: left;text-align: center;
+		}
+		#L ul li{
+				width: 90%;height:30px;background: #ff9f7f;margin:2px 0;float: right;clear: both;line-height: 30px;
+		}
+		#L ul li span{
+				display: block;
+				width:50px;height:30px;
+				position: absolute;left:20%;
+		}
+		#R ul li span{
+				display: block;
+				width:50px;height:30px;
+				position: absolute;right:20%;
+		}
+		#M ul li{
+				width: 100%;height:30px;margin:2px 0;float: right;
+		}
+		#R ul li{
+				width: 90%;height:30px;background: #52d5d8;margin:2px 0;float: left;
+				float:left;clear: both;line-height: 30px;
+		}
+		#M{
+			width: 20%;float: left;text-align: center;
+		}
+		#R{
+			width: 40%;float: left;text-align: center;
+		}
+</style>
+<body class="index sale">
+		<div class="top">
+			  <ul class="f-cb" id="nav">
+			    <li data-id="1" class="nav-d">昨日</li>
+			    <li data-id="2" class="nav-d">上周</li>
+			    <li data-id="3" class="nav-d">本周</li>
+			    <li data-id="4" class="nav-d">上月</li>
+			    <li data-id="5" class="active nav-d">本月</li>
+			    <li data-id="6" class="nav-d">本年至今</li>
+			  </ul>
+		</div>
+		<div class="drop-down">
+					<label>零售金额</label>
+					<span>6666666</span>
+					<a class="mui-icon mui-icon-arrowdown"></a>
+		</div>
+		<div class="shop_switch">
+				<label>包含本店销售本店发货的数据</label>
+				<div id="mySwitch" class="mui-switch mui-switch-mini mui-switch-blue ">
+			  		<div class="mui-switch-handle"></div>
+				</div>
+		</div>
+		<div class="list_data_sum">
+				<div class="list_data_l">
+							<p></p>
+							<span class="top_Arrow-l">▲</span>
+						  <span class="dow_Arrow-l">▼</span>
+						  <span id="zb">对店铺总零售占比</span>
+				</div>
+				<div class="list_data_m">
+						<p>店</p>
+				</div>
+				<div class="list_data_r">
+							<p></p>
+							<span class="top_Arrow-r">▲</span>
+						  <span class="dow_Arrow-r">▼</span>
+						  <span id="jin">跨店零售金额</span>
+				</div>
+		</div>
+		<div id="Big_box">
+				<div id="L">
+						<ul>
+								
+						</ul>
+				</div>
+				<div id="M">
+						<ul>
+							
+						</ul>
+				</div>
+				<div id="R">
+						<ul>
+							
+						</ul>
+				</div>
+		</div>
+</body>
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="js/Adaptation.js"></script>
+<script type="text/javascript" src="js/api.js" ></script>
+<script type="text/javascript" src="js/Nav.js" ></script>
+<script type="text/javascript" src="js/mui.min.js" ></script>
+<script type="text/javascript" src="js/mui.picker.all.js" ></script>
+<script type="text/javascript" src="js/list.js" ></script>
+<script>
+//	var url = "http://report.offline.qingger.com:8188/bi_yhj/REALLY/bi/report/crossOrgRank/query";
+	var url = "http://tel.runsa.cn:8177/bi_yhj/REALLY/bi/report/crossOrgRank/query";
+	
+	var x = 1;
+	var m = 5;
+	var sum =0;
+	var paixu = 0;
+	var hangshu = 3000;
+	var par = {
+		"areacode1":"",
+		"local_send_flag":x,		//0表示包含本店销发数据;默认值1
+		"org_brd_id":"",
+		"org_level_id":"",
+		"userId":"1234536",			//123456表示分别代表时间段,
+		"va_months":m,
+		"sortField":"cross_sal_amt",				//排序的字段
+		"sortType":paixu,							//0降序/1升序
+		"pageRow":hangshu,						//行数30行
+};
+var arr = [];
+var brr = [];
+var crr = [];
+shop(par)
+function shop(par){
+	$.ajax({
+		type:"post",
+		url:url,
+		data:par,
+		success:function(obj){
+					console.log(obj)
+					var list = obj.data.list
+					var sum = obj.data.summary
+					$(".drop-down span").html(format(sum[0].sal_amt))		//默认显示
+					$(".list_data_l p").html(sum[0].cross_sal_amt_ratio +"%")
+					$(".list_data_r p").html(format(sum[0].cross_sal_amt))
+						$('.drop-down').on('click',function(){
+						var picker = new mui.PopPicker();
+						picker.setData([{
+								index:1,
+						    value: "first",
+						    text: "零售金额",
+						    jine:sum[0].sal_amt		//零售金额选择框上的价钱
+						},{
+								index:2,
+						    value: "second",
+						    text: "零售数量",
+						    shuliang:sum[0].sal_qty	
+						},{
+								index:3,
+						    value: "third",
+						    text: "零售单数",
+						    danshu:sum[0].sal_nos
+						}])
+						picker.pickers[0].setSelectedIndex(0);
+						picker.show(function(SelectedItem) {
+								if(SelectedItem[0].index==1){
+											$(".drop-down span").html(format(sum[0].sal_amt))
+											$(".drop-down label").html(SelectedItem[0].text)
+											$(".list_data_l p").html(sum[0].cross_sal_amt_ratio +"%")
+								  		$(".list_data_r p").html(format(sum[0].cross_sal_amt))
+								}else if(SelectedItem[0].index==2){
+											$(".drop-down span").html(format(sum[0].sal_qty))
+											$(".drop-down label").html(SelectedItem[0].text)
+											$(".list_data_l p").html(sum[0].cross_sal_qty_ratio +"%")
+								  		$(".list_data_r p").html(format(sum[0].cross_sal_qty))
+									}else{
+											$(".drop-down span").html(format(sum[0].sal_nos))
+											$(".drop-down label").html(SelectedItem[0].text)
+											$(".list_data_l p").html(sum[0].cross_sal_nos_ratio +"%")
+								  		$(".list_data_r p").html(format(sum[0].cross_sal_nos))
+									}
+								
+								
+						})
+				})
+				for (var i = 0; i < list.length; i++) {
+					
+//					$("#L ul").append(" <li><span>"+list[i].cross_sal_amt_ratio+"%</span></li>");
+//				//	$("#M ul").append(" <li>"+list[i].org_id+"</li>");
+//					$("#R ul").append(" <li><span>"+list[i].cross_sal_amt+"</span></li>");
+					arr.push(list[i].org_id)//店铺代号
+					brr.push(list[i].cross_sal_amt_ratio)//店铺占比
+					crr.push(list[i].cross_sal_amt)//店铺金额
+				}	
+			  	var z = 0
+					   for (var i = 0; i < sliceArr(arr, 15)[z].length; i++) {
+							$("#M ul").append(" <li>"+sliceArr(arr, 15)[z][i]+"</li>");
+						}
+					for (var i = 0; i < sliceBrr(brr, 15)[z].length; i++) {
+							$("#L ul").append(" <li><span>"+sliceBrr(brr, 15)[z][i]+"%</span></li>");
+						}
+					for (var i = 0; i < sliceCrr(crr, 15)[z].length; i++) {
+						$("#R ul").append(" <li><span>"+sliceBrr(crr, 15)[z][i]+"</span></li>");
+					}		
+						
+				$(function(){
+			    var e_h = $(".list_data_sum").offset().top;//获得某个页面元素距离顶部的高度
+			    var h = 200;//定义一个数值，当滚动条距离页面顶部200时触发一个函数。
+			    $(window).scroll(function(){
+			        var top = $(window).scrollTop();//获得滚动条距离顶部的距离
+			        if(top > e_h-600)
+			        {
+			           z+=1
+			            for (var i = 0; i < sliceArr(arr, 15)[z].length; i++) {
+											$("#M ul").append(" <li>"+sliceArr(arr, 15)[z][i]+"</li>");
+										}
+									for (var i = 0; i < sliceBrr(brr, 15)[z].length; i++) {
+											$("#L ul").append(" <li><span>"+sliceBrr(brr, 15)[z][i]+"%</span></li>");
+										}
+									for (var i = 0; i < sliceCrr(crr, 15)[z].length; i++) {
+										$("#R ul").append(" <li><span>"+sliceBrr(crr, 15)[z][i]+"</span></li>");
+									}		
+			        }
+			    });
+			});
+				
+				
+				
+   				 function sliceArr(arr, size) {
+                      var result = [];
+                      for (var x = 0; x < Math.ceil(arr.length / size); x++) {
+                            var start = x * size;
+                               var end = start + size;
+                                result.push(arr.slice(start, end));
+                            }
+                        return result;
+  					}
+    				 function sliceBrr(brr, size) {
+                      var result = [];
+                      for (var x = 0; x < Math.ceil(brr.length / size); x++) {
+                            var start = x * size;
+                               var end = start + size;
+                                result.push(brr.slice(start, end));
+                            }
+                        return result;
+  					}
+    				 function sliceCrr(crr, size) {
+                      var result = [];
+                      for (var x = 0; x < Math.ceil(crr.length / size); x++) {
+                            var start = x * size;
+                               var end = start + size;
+                                result.push(crr.slice(start, end));
+                            }
+                        return result;
+  					}
+					
+		}
+	});
+}
+
+
+function format (num) {
+    return (num.toFixed(0) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,');//千分位转换
+}
+ 
+
+
+</script>
